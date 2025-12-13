@@ -10,9 +10,9 @@ export function Hero() {
     return (
         <section
             id="home"
-            className="flex min-h-[100vh] flex-col items-center justify-center p-4 text-center sm:p-24"
+            className="relative overflow-hidden flex min-h-[100vh] flex-col items-center justify-center p-4 text-center sm:p-24"
         >
-            <div className="relative z-10 flex flex-col items-center gap-6">
+            <div className="relative z-10 flex w-full flex-col items-center gap-6">
                 {/* Animated Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -60,7 +60,7 @@ export function Hero() {
                         </Link>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="h-12 px-8 text-base">
-                        <Link href="/resume.pdf" target="_blank">
+                        <Link href="/resume" target="_blank">
                             Download CV <Download className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>

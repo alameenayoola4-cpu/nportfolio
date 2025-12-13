@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
+    <main className="flex-1 w-full">
       <Hero />
       <About />
       <Skills />

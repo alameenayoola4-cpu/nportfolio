@@ -32,17 +32,13 @@ export function About() {
                     className="relative mx-auto"
                 >
                     <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-background shadow-2xl sm:h-96 sm:w-96">
-                        {/* Replace with actual image */}
-                        <div className="h-full w-full bg-muted flex items-center justify-center text-muted-foreground">
-                            <span className="text-4xl">👋</span>
-                        </div>
-                        {/* <Image
-              src="/profile.jpg"
-              alt="Profile"
-              fill
-              className="object-cover"
-              priority
-            /> */}
+                        <Image
+                            src="/profile.jpg"
+                            alt="Profile"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
                     </div>
                     {/* Decorative Ring */}
                     <div className="absolute -inset-4 -z-10 rounded-full border border-primary/20" />
@@ -69,11 +65,11 @@ export function About() {
 
                     <div className="grid grid-cols-2 gap-4 pt-4">
                         <div className="flex flex-col p-4 rounded-xl bg-secondary/30 border border-border">
-                            <span className="text-3xl font-bold text-foreground">5+</span>
+                            <span className="text-3xl font-bold text-foreground">2+</span>
                             <span className="text-sm">Years Experience</span>
                         </div>
                         <div className="flex flex-col p-4 rounded-xl bg-secondary/30 border border-border">
-                            <span className="text-3xl font-bold text-foreground">50+</span>
+                            <span className="text-3xl font-bold text-foreground">20+</span>
                             <span className="text-sm">Projects Completed</span>
                         </div>
                     </div>

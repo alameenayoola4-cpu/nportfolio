@@ -46,34 +46,34 @@ export const experiencesData = [
 
 export const projectsData = [
     {
-        title: "E-Commerce Dashboard",
+        title: "Samkaf E-Commerce Store",
         description:
-            "A comprehensive dashboard for managing online stores. Features include real-time analytics, inventory management, and order processing.",
-        tags: ["React", "Next.js", "Tailwind", "Supabase"],
-        imageUrl: "/projects/dashboard.png", // specific placeholder path
+            "Full-stack e-commerce platform for phone accessories with modern UI, Nigerian payment integration via Paystack, user authentication with email OTP 2FA, and real-time purchase notifications.",
+        tags: ["Next.js", "MongoDB", "NextAuth", "Paystack"],
+        imageUrl: "/projects/samkaf-store.png",
         link: "https://example.com",
-        github: "https://github.com/example/dashboard",
+        github: "https://github.com/alameenayoola4-cpu/samkaf-ecommerce-store",
         featured: true,
     },
     {
-        title: "AI Chat Application",
+        title: "Samkaf Admin Dashboard",
         description:
-            "Real-time chat application powered by OpenAI's GPT-4. Supports multiple languages and context-aware conversations.",
-        tags: ["TypeScript", "OpenAI API", "Socket.io", "Redis"],
-        imageUrl: "/projects/chat.png",
+            "Comprehensive admin panel for managing the e-commerce store. Features include real-time analytics, inventory management, order processing, flash sales, coupons, and product categories.",
+        tags: ["React", "Next.js", "Tailwind", "MongoDB"],
+        imageUrl: "/projects/samkaf-dashboard.png",
         link: "https://example.com",
-        github: "https://github.com/example/chat",
+        github: "https://github.com/alameenayoola4-cpu/samkaf-ecommerce-store",
         featured: true,
     },
     {
-        title: "Task Management Tool",
+        title: "TaskFlow Pro",
         description:
-            "Collaborative task management tool with drag-and-drop interface, team assignments, and progress tracking.",
-        tags: ["Vue.js", "Vuex", "Firebase", "Sass"],
-        imageUrl: "/projects/task.png",
-        link: "https://example.com",
-        github: "https://github.com/example/task",
-        featured: false,
+            "A modern task management platform with Kanban boards, Pomodoro timer, team collaboration, project management, and real-time updates. Features authentication, subtasks, comments, and drag-and-drop functionality.",
+        tags: ["Next.js 14", "TypeScript", "PostgreSQL", "Drizzle ORM"],
+        imageUrl: "/projects/taskflow.png",
+        link: "#",
+        github: "https://github.com/alameenayoola4-cpu/task-management",
+        featured: true,
     },
 ];
 

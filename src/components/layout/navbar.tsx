@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { links } from "@/lib/data";
@@ -12,10 +13,11 @@ import { useActiveSection } from "@/hooks/use-active-section";
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const activeSection = useActiveSection(links.map((link) => link.hash.substring(1)));
+    const pathname = usePathname();
 
     return (
-        <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
-            <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md print:hidden">
+            <div className="w-full flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
                 <Link
                     href="#home"
                     className="text-xl font-bold tracking-tighter"
@@ -29,7 +31,7 @@ export function Navbar() {
                         {links.map((link) => (
                             <li key={link.hash} className="relative">
                                 <Link
-                                    href={link.hash}
+                                    href={pathname === "/" ? link.hash : `/${link.hash}`}
                                     className={cn(
                                         "text-sm font-medium transition-colors hover:text-primary",
                                         activeSection === link.hash.substring(1)
@@ -59,7 +61,7 @@ export function Navbar() {
                 </div>
 
                 {/* Mobile Navigation Toggle */}
-                <div className="flex md:hidden items-center gap-4">
+                <div className="flex md:hidden items-center gap-2">
                     <ThemeToggle />
                     <button
                         className="p-2"
@@ -83,7 +85,7 @@ export function Navbar() {
                         {links.map((link) => (
                             <li key={link.hash}>
                                 <Link
-                                    href={link.hash}
+                                    href={pathname === "/" ? link.hash : `/${link.hash}`}
                                     className={cn(
                                         "block text-sm font-medium transition-colors hover:text-primary",
                                         activeSection === link.hash.substring(1)

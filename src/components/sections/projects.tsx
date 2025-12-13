@@ -65,16 +65,12 @@ export function Projects() {
                         >
                             <Card className="h-full overflow-hidden flex flex-col group hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
                                 <div className="relative h-48 w-full overflow-hidden bg-muted">
-                                    <div className="w-full h-full flex items-center justify-center text-4xl bg-secondary/50 group-hover:scale-105 transition-transform duration-500">
-                                        {/* Placeholder for project image */}
-                                        💻
-                                    </div>
-                                    {/* <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  /> */}
+                                    <Image
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
                                 </div>
                                 <CardHeader>
                                     <CardTitle>{project.title}</CardTitle>

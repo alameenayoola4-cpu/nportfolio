@@ -69,10 +69,16 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+    width: 100%;
+    overflow-x: hidden;
   }
+
   html {
-     scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
   }
 }

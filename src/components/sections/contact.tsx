@@ -5,6 +5,9 @@ import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "react-hot-toast";
+import { useFormStatus } from "react-dom";
+
 
 export function Contact() {
     return (
@@ -39,10 +42,27 @@ export function Contact() {
                 viewport={{ once: true }}
                 className="flex w-full max-w-lg flex-col gap-4"
                 action={async (formData) => {
-                    // Server action logic would go here
-                    console.log("Running on client for demo");
+                    const { sendEmail } = await import("@/actions/send-email");
+                    const result = await sendEmail(formData);
+
+                    if (result?.error) {
+                        toast.error(result.error);
+                        return;
+                    }
+
+                    toast.success("Message sent successfully!");
+                    // Optional: Reset form
+                    (document.getElementById("contact-form") as HTMLFormElement)?.reset();
                 }}
+                id="contact-form"
             >
+                <Input
+                    type="text"
+                    name="senderName"
+                    placeholder="Your name"
+                    required
+                    maxLength={200}
+                />
                 <Input
                     type="email"
                     name="senderEmail"
@@ -57,10 +77,25 @@ export function Contact() {
                     maxLength={5000}
                     className="h-32"
                 />
-                <Button type="submit" className="w-full">
-                    Submit <Send className="ml-2 h-4 w-4" />
-                </Button>
+                <SubmitButton />
             </motion.form>
         </section>
     );
 }
+
+function SubmitButton() {
+    const { pending } = useFormStatus();
+
+    return (
+        <Button type="submit" className="w-full" disabled={pending}>
+            {pending ? (
+                <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+            ) : (
+                <>
+                    Submit <Send className="ml-2 h-4 w-4" />
+                </>
+            )}
+        </Button>
+    );
+}
+

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Ayoola Adedeji | Full Stack Developer",
@@ -22,8 +23,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <div className="flex flex-col min-h-screen w-full">
+            <Navbar />
+            {children}
+            <Toaster position="top-right" />
+          </div>
         </ThemeProvider>
       </body>
     </html>
